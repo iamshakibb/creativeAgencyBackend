@@ -75,7 +75,6 @@ client.connect((err) => {
 
   //Editing the service data from db
   app.patch("/editStatus/:id", (req, res) => {
-    console.log(req.body.statusInfo);
     clientServicesCollection
       .updateOne(
         { _id: ObjectId(req.params.id) },
@@ -106,7 +105,6 @@ client.connect((err) => {
   // Add admin data in db
   app.post("/addAdmin", (req, res) => {
     const { email } = req.body;
-    console.log(req.body);
     adminCollection.insertOne({ email }).then(() => {
       res.end();
     });
