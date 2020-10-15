@@ -122,4 +122,4 @@ app.get("/", (req, res) => {
   res.send("SHIHABUN SHAKIB");
 });
 
-app.listen(port);
+app.listen(port || process.env.PORT);
